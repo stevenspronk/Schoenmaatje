@@ -4,9 +4,18 @@
 			<Page title="{i18n>PersonPageTitle}">
 				<headerContent></headerContent>
 				<content>
-				<Label text="Label"/>
-				<Input value=""/>
-				
+<!--					<Label text="{i18n>Barcode}"/>
+					<Input value="{/schoenendoosSet>Barcode}"/>
+					<Label text="{i18n>Usertype}"/>
+					<Input value="{Usertype}"/>
+					<Label text="{i18n>Voornaam}"/>
+					<Input value="{Voornaam}"/>
+					<Label text="{i18n>Vader}"/>
+					<Input value="{Vader}"/>
+					<Label text="{i18n>Moeder}"/>
+					<Input value="{Moeder}"/>
+					<Label text="{i18n>BroersAantal}"/>
+					<Input value="{BroersAantal}"/>-->
 				</content>
 			</Page>
 		</pages>

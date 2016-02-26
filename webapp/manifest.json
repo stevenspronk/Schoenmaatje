@@ -97,7 +97,7 @@
 				"name": "overview",
 				"target": "overview"
 			}, {
-				"pattern": "person",
+				"pattern": "person/{type}",
 				"name": "person",
 				"target": "person"
 			}],
