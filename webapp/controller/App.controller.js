@@ -2,8 +2,9 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller"
 ], function(Controller) {
 	"use strict";
-	return Controller.extend("schoenmaatje.controller.App", {
-		onOpenDialog: function() {
-		}
+
+	return Controller.extend("Schoenmaatje.controller.App", {
+
 	});
+
 });

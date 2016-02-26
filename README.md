@@ -1,3 +1,0 @@
-# Schoenmaatje
-SAP Hackathon
-aanpassin
