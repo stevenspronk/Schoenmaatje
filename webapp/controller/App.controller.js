@@ -5,6 +5,20 @@ sap.ui.define([
 
 	return Controller.extend("Schoenmaatje.controller.App", {
 
+		goToSender: function() {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("person");
+		},
+		goToReceiver: function() {
+
+		},
+		goToTimeline: function() {
+
+		},
+		goToCountry: function() {
+
+		}
+
 	});
 
 });
