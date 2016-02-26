@@ -68,17 +68,47 @@
 					"bundleName": "Schoenmaatje.i18n.i18n"
 				}
 			},
+
 			"": {
-                "dataSource": "schoenendozenSource",
-                "settings": {
+				"dataSource": "schoenendozenSource",
+				"settings": {
 					"json": true,
 					"defaultOperationMode": "Client",
 					"useBatch": false,
-					"serviceUrlParams": {"$format" : "json"},
+					"serviceUrlParams": {
+						"$format": "json"
+					},
 					"defaultCountMode": "None"
 				}
-            }
-			
+			}
+
+		},
+
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "Schoenmaatje.view",
+				"controlId": "app",
+				"controlAggregation": "pages"
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "overview",
+				"target": "overview"
+			}, {
+				"pattern": "person",
+				"name": "person",
+				"target": "person"
+			}],
+			"targets": {
+				"overview": {
+					"viewName": "Overview"
+				},
+				"person": {
+					"viewName": "Person"
+				}
+			}
 		},
 		"resources": {
 			"css": [{
