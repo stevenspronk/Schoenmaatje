@@ -3,7 +3,7 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 
-	return Controller.extend("Schoenmaatje.controller.Person", {
+	return Controller.extend("Schoenmaatje.controller.Receiver", {
 onInit: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("person").attachPatternMatched(this._onObjectMatched, this);

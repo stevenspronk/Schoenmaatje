@@ -97,16 +97,23 @@
 				"name": "overview",
 				"target": "overview"
 			}, {
-				"pattern": "person/{type}",
-				"name": "person",
-				"target": "person"
+				"pattern": "sender",
+				"name": "sender",
+				"target": "sender"
+			}, {
+				"pattern": "receiver",
+				"name": "receiver",
+				"target": "receiver"
 			}],
 			"targets": {
 				"overview": {
 					"viewName": "Overview"
 				},
-				"person": {
-					"viewName": "Person"
+				"sender": {
+					"viewName": "Sender"
+				},
+				"receiver": {
+					"viewName": "Receiver"
 				}
 			}
 		},
