@@ -361,5 +361,8 @@
       },
       "custom": {}
     }
+  },
+  "mockpreview": {
+    "loadJSONFiles": true
   }
 }

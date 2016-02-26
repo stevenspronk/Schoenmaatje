@@ -13,6 +13,11 @@
 		"sourceTemplate": {
 			"id": "ui5template.basicSAPUI5ApplicationProject",
 			"version": "1.32.0"
+		},
+		"dataSources": {
+			"schoenendozenSource": {
+				"uri": "/sap/opu/odata/sap/ZHCK_EDUKANS_SRV/"
+			}
 		}
 	},
 
@@ -62,7 +67,18 @@
 				"settings": {
 					"bundleName": "Schoenmaatje.i18n.i18n"
 				}
-			}
+			},
+			"": {
+                "dataSource": "schoenendozenSource",
+                "settings": {
+					"json": true,
+					"defaultOperationMode": "Client",
+					"useBatch": false,
+					"serviceUrlParams": {"$format" : "json"},
+					"defaultCountMode": "None"
+				}
+            }
+			
 		},
 		"resources": {
 			"css": [{

@@ -8,6 +8,15 @@
 					<Button id="btn_goToReceiver" press="goToReceiver" text="{i18n>Receiver}"/>
 					<Button id="btn_goToTimeline" press="goToTimeline" text="{i18n>Timeline}"/>
 					<Button id="btn_goToCountry" press="goToCountry" text="{i18n>Country}"/>
+					<Text text="Lorem ipsum"/>
+					<Button press="scanBarcode" text="Scan!"/>
+					<Button press="takePhoto" text="Foto!"/>
+					<List growing="true" growingScrollToLoad="true" items="{/schoenendoosSet}" mode="SingleSelectMaster"
+						noDataText="Geen schoenendoos beschikbaar">
+						<items>
+							<StandardListItem title="{Voornaam}"></StandardListItem>
+						</items>
+					</List>
 				</content>
 			</Page>
 		</pages>
