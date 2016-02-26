@@ -16,19 +16,7 @@ sap.ui.define([
 		},
 		
 
-		goToSender: function() {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("person");
-		},
-		goToReceiver: function() {
-
-		},
-		goToTimeline: function() {
-
-		},
-		goToCountry: function() {
-
-		},
+	
 		takePhoto: function() {
 			navigator.camera.getPicture(onSuccess, onFail, {
 				quality: 50,
