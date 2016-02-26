@@ -4,18 +4,30 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("Schoenmaatje.controller.Sender", {
-onInit: function () {
+		onInit: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("person").attachPatternMatched(this._onObjectMatched, this);
 		},
-		_onObjectMatched: function (oEvent) {
-/*			this.getView().bindElement({
+		_onObjectMatched: function(oEvent) {
+			/*			this.getView().bindElement({
 				path: "/" + oEvent.getParameter("arguments").invoicePath,
 				model: "invoice"
 			});*/
+		},
+		takePhoto: function(oEvent) {
+			var self = this;
+			navigator.camera.getPicture(function(result) {
+				this.getView().getModel().setProperty("/schoenendoosSet(Barcode='1234567890',Usertype='O')/Foto", result);
+				//console.log(result + result);
+			}.bind(this), onFail, {
+				quality: 50,
+				destinationType: Camera.DestinationType.FILE_URI
+			});
+
+			function onFail(message) {
+				alert('Failed because: ' + message);
+			}
 		}
-
-
 
 	});
 

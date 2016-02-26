@@ -10,16 +10,6 @@
 					<Button id="btn_goToCountry" press="goToCountry" text="{i18n>Country}"/>
 					<Text text="Lorem ipsum"/>
 					<Button press="scanBarcode" text="Scan!"/>
-					<Button press="takePhoto" text="Foto!"/>
-					<List growing="true" growingScrollToLoad="true" items="{/schoenendoosSet}" mode="SingleSelectMaster"
-						noDataText="Geen schoenendoos beschikbaar">
-						<items>
-							<CustomListItem>
-								<Title text="{Voornaam}"></Title>
-								<Image scr="{Foto}"></Image>
-							</CustomListItem>
-						</items>
-					</List>
 				</content>
 			</Page>
 		</pages>
