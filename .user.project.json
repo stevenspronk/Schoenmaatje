@@ -2,7 +2,7 @@
   "run": [
     {
       "filePath": "/webapp/index.html",
-      "previewMode": 1,
+      "previewMode": 0,
       "dataMode": 1,
       "workspace": "withoutWorkspace",
       "ui5ActiveVersion": null,
@@ -12,8 +12,8 @@
       "hashParameter": "",
       "backendSystem": [],
       "_metadata": {
-        "runnerId": "webapprunner",
         "id": 7569680,
+        "runnerId": "webapprunner",
         "displayName": "Run index.html 2"
       }
     },

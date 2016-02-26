@@ -6,6 +6,8 @@
 				<content>
 					<Text
 						text="Lorem ipsum"/>
+						<Button text ="Scan!" press="scanBarcode"/>
+						<Button text ="Foto!" press="takePhoto"/>
 				</content>
 			</Page>
 		</pages>
