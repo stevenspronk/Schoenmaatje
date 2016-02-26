@@ -1,5 +1,5 @@
 <mvc:View controllerName="Schoenmaatje.controller.App" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
-	<App class="myAppDemoWT">
+	<App>
 		<pages>
 			<Page title="{i18n>homePageTitle}">
 				<headerContent></headerContent>
