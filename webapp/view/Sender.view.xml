@@ -5,15 +5,7 @@
 				<headerContent></headerContent>
 				<content>
 					<Button press="takePhoto" text="Foto!"/>
-					<List growing="true" growingScrollToLoad="true" items="{/schoenendoosSet}" mode="SingleSelectMaster"
-						noDataText="Geen schoenendoos beschikbaar">
-						<items>
-							<CustomListItem>
-								<Title text="{Voornaam}"></Title>
-								<Image scr="{Foto}"></Image>
-							</CustomListItem>
-						</items>
-					</List>
+				
 				</content>
 			</Page>
 		</pages>

@@ -5,15 +5,9 @@ sap.ui.define([
 
 	return Controller.extend("Schoenmaatje.controller.Receiver", {
 		onInit: function() {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.getRoute("person").attachPatternMatched(this._onObjectMatched, this);
+	
 		},
-		_onObjectMatched: function(oEvent) {
-			/*			this.getView().bindElement({
-				path: "/" + oEvent.getParameter("arguments").invoicePath,
-				model: "invoice"
-			});*/
-		},
+	
 		takePhoto: function(oEvent) {
 			var self = this;
 			navigator.camera.getPicture(function(result) {

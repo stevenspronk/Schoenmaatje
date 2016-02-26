@@ -17,9 +17,17 @@ sap.ui.define([
 		},
 		goToCountry: function() {
 
+		},
+		scanBarcode: function() {
+			cordova.plugins.barcodeScanner.scan(
+				function(result) {
+					console.log(result);
+				},
+				function(error) {
+					alert("Scannen mislukt: " + error);
+				}
+			);
 		}
-			
-
 
 	});
 
