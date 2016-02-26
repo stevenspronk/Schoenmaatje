@@ -363,6 +363,10 @@
     }
   },
   "mockpreview": {
-    "loadJSONFiles": true
+    "loadJSONFiles": true,
+    "mockUri": "/sap/opu/odata/sap/ZHCK_EDUKANS_SRV/",
+    "metadataFilePath": "localService/metadata.xml",
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
   }
 }

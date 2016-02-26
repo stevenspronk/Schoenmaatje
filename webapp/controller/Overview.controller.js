@@ -6,7 +6,7 @@ sap.ui.define([
 	return Controller.extend("Schoenmaatje.controller.Overview", {
 		goToSender: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("person");
+			oRouter.navTo("person", {type:"Sender"});
 		},
 		goToReceiver: function() {
 
