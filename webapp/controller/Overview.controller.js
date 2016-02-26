@@ -22,7 +22,7 @@ sap.ui.define([
 			var self = this;
 			navigator.camera.getPicture(function(result){
 				this.getView().getModel().setProperty("/schoenendoosSet(Barcode='1234567890',Usertype='O')/Foto", result);
-				console.log(result);
+				console.log(result + result);
 			}.bind(this), onFail, {
 				quality: 50,
 				destinationType: Camera.DestinationType.FILE_URI
