@@ -8,6 +8,19 @@
 						text="Lorem ipsum"/>
 						<Button text ="Scan!" press="scanBarcode"/>
 						<Button text ="Foto!" press="takePhoto"/>
+							
+						<List 
+						mode="SingleSelectMaster" 
+	                	noDataText="Geen schoenendoos beschikbaar" 
+	                growing="true" 
+	                growingScrollToLoad="true" 
+	                items="{/schoenendoosSet}">
+							<items>
+								<StandardListItem title="{Voornaam}">
+									
+								</StandardListItem>
+							</items>
+						</List>
 				</content>
 			</Page>
 		</pages>
