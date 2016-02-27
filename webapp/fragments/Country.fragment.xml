@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns:commons="sap.suite.ui.commons" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+	<Text text="Ik ben hier"/>
+</core:FragmentDefinition>

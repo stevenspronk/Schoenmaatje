@@ -80,6 +80,10 @@ sap.ui.define([
 		},
 		
 		setForeignCountry: function(oEvent){
+						var mainPanel = this.getView().byId("mainPanel");
+			mainPanel.setVisible(true); 
+			var fragmentPanel = this.getView().byId("fragmentPanel");
+			fragmentPanel.setVisible(false); 
 			var self = this;
 			var oParameters = oEvent.getParameters();
 			var oModel = this.getView().getModel();
@@ -97,6 +101,10 @@ sap.ui.define([
 		},
 		
 		setHomeCountry: function(oEvent){
+				var mainPanel = this.getView().byId("mainPanel");
+			mainPanel.setVisible(true); 
+			var fragmentPanel = this.getView().byId("fragmentPanel");
+			fragmentPanel.setVisible(false); 
 			var self = this;
 			var oParameters = oEvent.getParameters();
 			var oModel = this.getView().getModel();
@@ -169,7 +177,14 @@ sap.ui.define([
 		
 		onCloseTimeLine: function(oEvent) {
 			this._oPopover.close();
-		}		
+		},
+		
+		showCountryFragment: function(oEvent){
+			var mainPanel = this.getView().byId("mainPanel");
+			mainPanel.setVisible(false); 
+			var fragmentPanel = this.getView().byId("fragmentPanel");
+			fragmentPanel.setVisible(true); 
+		}
 
 	});
 
