@@ -84,6 +84,8 @@ sap.ui.define([
 			mainPanel.setVisible(true);
 			var fragmentPanel = this.getView().byId("fragmentPanel");
 			fragmentPanel.setVisible(false);
+			var fragmentPanel = this.getView().byId("saveFooter");
+			fragmentPanel.setVisible(false);
 			var self = this;
 			var oParameters = oEvent.getParameters();
 			var oModel = this.getView().getModel();
@@ -104,6 +106,8 @@ sap.ui.define([
 			mainPanel.setVisible(true);
 			var fragmentPanel = this.getView().byId("fragmentPanel");
 			fragmentPanel.setVisible(false);
+			var fragmentPanel = this.getView().byId("saveFooter");
+			fragmentPanel.setVisible(true);
 			var self = this;
 			var oParameters = oEvent.getParameters();
 			var oModel = this.getView().getModel();
@@ -181,6 +185,8 @@ sap.ui.define([
 			mainPanel.setVisible(false);
 			var fragmentPanel = this.getView().byId("fragmentPanel");
 			fragmentPanel.setVisible(true);
+			var fragmentPanel = this.getView().byId("saveFooter");
+			fragmentPanel.setVisible(false);
 		}
 
 	});
