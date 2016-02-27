@@ -10,6 +10,7 @@
 						<ToolbarSpacer/>
 						<SegmentedButton selectedButton="sender">
 							<Button id="sender" press="setHomeCountry" text="{i18n>SendingCountry}"/>
+
 							<Button press="setForeignCountry" text="{i18n>DestinationCountry}"/>
 						</SegmentedButton>
 						<ToolbarSpacer/>
