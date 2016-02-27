@@ -5,29 +5,37 @@
 				<headerContent></headerContent>
 				<content>
 					<Title text="Mijn schoenendoos is: {senderModel>/Barcode}"/>
-					<Text text="{senderModel>/Voornaam}"/>
+			
 					<Button press="takePhoto" text="Foto!"/>
-<<<<<<< HEAD
-					<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="false" layout="ResponsiveGridLayout" id="__form0">
-
-				    <sap.ui.layout.form:content>
-
-				        <sap.ui.core:Title xmlns:sap.ui.core="sap.ui.core" text="Title" id="__title0"/>
-
-				        <Label text="Label 1" id="__label0"/>
-
-				        <Input width="100%" id="__input0"/>
-
-				        <Input width="100%" id="__input1"/>
-
-				        <Label text="Label 2" id="__label1"/>
-
-				        <Input width="100%" id="__input2"/></sap.ui.layout.form:content>
-
-				</sap.ui.layout.form:SimpleForm>
-=======
-					
->>>>>>> branch 'master' of https://github.com/stevenspronk/Schoenmaatje.git
+					<sap.ui.layout.form:SimpleForm editable="false" id="__form0" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form">
+						<sap.ui.layout.form:content>
+							<sap.ui.core:Title id="__title0" text="Title" xmlns:sap.ui.core="sap.ui.core"/>
+							<Label text="{i18n>Voornaam}"/>
+							<Input value="{senderModel>/Voornaam}" width="30%"/>
+							<Label text="{i18n>Vader}"/>
+							<Input value="{senderModel>/Vader}" width="30%"/>
+							<Label text="{i18n>Moeder}"/>
+							<Input value="{senderModel>/Moeder}" width="30%"/>
+							<Label text="{i18n>BroersAantal}"/>
+							<Input value="{senderModel>/BroersAantal}" width="30%"/>
+							<Label text="{i18n>ZustersAantal}"/>
+							<Input value="{senderModel>/ZustersAantal}" width="30%"/>
+							<Label text="{i18n>FavSport}"/>
+							<Input value="{senderModel>/FavSport}" width="30%"/>
+							<Label text="{i18n>FavMuziek}"/>
+							<Input value="{senderModel>/FavMuziek}" width="30%"/>
+							<Label text="{i18n>FavHobby}"/>
+							<Input value="{senderModel>/FavHobby}" width="30%"/>
+							<Label text="{i18n>FavKleur}"/>
+							<Input value="{senderModel>/FavKleur}" width="30%"/>
+							<Label text="{i18n>Idool}"/>
+							<Input value="{senderModel>/Idool}" width="30%"/>
+							<Label text="{i18n>Beroep}"/>
+							<Input value="{senderModel>/Beroep}" width="30%"/>
+							<Label text="{i18n>Wens}"/>
+							<Input value="{senderModel>/Wens}" width="30%"/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
 				</content>
 			</Page>
 		</pages>
