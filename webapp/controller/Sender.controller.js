@@ -106,6 +106,13 @@ sap.ui.define([
 							);
 							}
 						});
+	
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("country", {
+				from: "sender",
+				country: "schoenendoosSet(Barcode='" + barcode + "',Usertype='V')"
+			});
+
 		},
 		onShowTimeline: function(oEvent) {
 			var oTimeLine = this.getView().byId("timeLineId");

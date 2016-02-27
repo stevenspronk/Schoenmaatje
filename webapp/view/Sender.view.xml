@@ -1,106 +1,64 @@
-<mvc:View controllerName="Schoenmaatje.controller.Sender" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout">
+<mvc:View controllerName="Schoenmaatje.controller.Sender" displayBlock="true" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
 	<App>
 		<pages>
-			<Page title="Jij" showNavButton="true" navButtonPress="onNavBack">
+			<Page navButtonPress="onNavBack" showNavButton="true" title="Jij">
 				<headerContent></headerContent>
 				<content>
 					<Toolbar>
 						<ToolbarSpacer/>
-											<SegmentedButton selectedButton="sender">
-						<Button text="Nederland" id="sender" press="setHomeCountry"/>
-						<Button text="Andere land" press="setForeignCountry" />
-							
-					</SegmentedButton>
-					<ToolbarSpacer/>
+						<SegmentedButton selectedButton="sender">
+							<Button id="sender" press="setHomeCountry" text="{i18n>SendingCountry}"/>
+							<Button press="setForeignCountry" text="{i18n>DestinationCountry}"/>
+						</SegmentedButton>
+						<ToolbarSpacer/>
 					</Toolbar>
-
-				<l:Grid class="sapUiSmallMarginTop" defaultSpan="L6 M8 S12" hSpacing="2">
+					<l:Grid class="sapUiSmallMarginTop" defaultSpan="L6 M8 S12" hSpacing="2">
 						<l:content>
-							<Input class="nameTitle" value="Ik heet {Voornaam}"></Input>
+							<VBox>
+								<Label text="{i18n>Voornaam}"/>
+								<Input value="{Voornaam}"/>
+							</VBox>
 							<VBox class="formImage">
-
-							<Image src="data:image/png;base64,{FotoUser}" width="60%">
-															
-							</Image>
-							<Button press="takePhotoUser" text="Foto van mij!" width="100%"></Button>
+								<Image src="data:image/png;base64,{FotoUser}" width="60%"></Image>
+								<Button press="takePhotoUser" text="Foto van mij!" width="100%"></Button>
 							</VBox>
 							<VBox>
-								<Title text="Mijn familie!"></Title>
-								<HBox>
-							<Text text="Mijn vader heet:" class="inputForm"></Text>
-							<Input class="nameTitle" value="{Vader}"/>
-								</HBox>
-								<HBox>
-							<Text text="Mijn moeder heet:" class="inputForm"></Text>
-								<Input class="nameTitle" value="{Moeder}"/>
-									</HBox>
-									<HBox>
-									<Text text="Zoveel broers heb ik:" class="inputForm"></Text>
-									<Input class="nameTitle" value="{BroersAantal}"/>
-										</HBox>
-										<HBox>
-										<Text text="Zoveel zussen heb ik:" class="inputForm"></Text>
-									<Input class="nameTitle" value="{ZussenAantal}"/>
-										</HBox>
+								<sap.ui.layout.form:SimpleForm editable="false" id="__form0" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form">
+									<sap.ui.layout.form:content>
+										<Title text="{i18n>Familie}"></Title>
+										<Label text="{i18n>Vader}"/>
+										<Input value="{Vader}"/>
+										<Text text="{i18n>Moeder}"></Text>
+										<Input value="{Moeder}"/>
+										<Text text="{i18n>BroersAantal}"></Text>
+										<Input value="{BroersAantal}"/>
+										<Text text="{i18n>ZustersAantal}"></Text>
+										<Input value="{ZussenAantal}"/>
+									</sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
 							</VBox>
-							<Image src="data:image/png;base64,{FotoFamilie}" width="60%">
-							</Image>
+							<Image src="data:image/png;base64,{FotoFamilie}" width="60%"></Image>
 							<VBox>
-							<Input class="nameTitle" value="Dit is mijn klas!"/>
-								<Input class="nameTitle" value="Dit is mijn klas!"/><Input class="nameTitle" value="Dit is mijn klas!"/>
-								</VBox>
-							<Image src="data:image/png;base64,{FotoKlas}" width="60%">
-							</Image>
+								<Input value="{i18n>Klas}"/>
+							</VBox>
+							<Image src="data:image/png;base64,{FotoKlas}" width="60%"></Image>
+							<Label text="{i18n>FavSport}"/>
+							<Input value="{receiverModel>/FavSport}"/>
+							<Label text="{i18n>FavMuziek}"/>
+							<Input value="{receiverModel>/FavMuziek}"/>
+							<Label text="{i18n>FavHobby}"/>
+							<Input value="{receiverModel>/FavHobby}"/>
+							<Label text="{i18n>FavKleur}"/>
+							<Input value="{receiverModel>/FavKleur}"/>
+							<Label text="{i18n>Idool}"/>
+							<Input value="{receiverModel>/Idool}"/>
+							<Label text="{i18n>Beroep}"/>
+							<Input value="{receiverModel>/Beroep}"/>
+							<Label text="{i18n>Wens}"/>
+							<TextArea rows="3" value="{receiverModel>/Wens}"/>
 						</l:content>
 					</l:Grid>
-				<!--<content>
-
-					<Button press="takePhotoFamily" text="Foto van mijn familie!"/>
-					<Button press="takePhotoClass" text="Foto van mijn familie!"/>
-					<sap.ui.layout.form:SimpleForm editable="false" id="__form0" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" labelSpanL="3">
-						<sap.ui.layout.form:content>
-							<sap.ui.core:Title id="__title0" text="Title" xmlns:sap.ui.core="sap.ui.core"/>
-								<VBox>
-									<HBox>
-							<Label text="{i18n>Voornaam}"/>
-							<Input value="{Voornaam}"/>
-								<VBox>
-														<Button press="takePhotoUser" text="Foto van mij!"></Button>
-															<Image src="data:image/png;base64,{FotoUser}"/>
-																</VBox>
-								</HBox>
-							<Label text="{i18n>Vader}"/>
-							<Input value="{Vader}" />
-							<Label text="{i18n>Moeder}"/>
-							<Input value="{Moeder}" />
-							<Label text="{i18n>BroersAantal}"/>
-							<Input value="{BroersAantal}" />
-							<Label text="{i18n>ZustersAantal}"/>
-							<Input value="{ZustersAantal}" />
-							<Label text="{i18n>FavSport}"/>
-							<Input value="{FavSport}" />
-							<Label text="{i18n>FavMuziek}"/>
-							<Input value="{FavMuziek}" />
-							<Label text="{i18n>FavHobby}"/>
-							<Input value="{FavHobby}" />
-							<Label text="{i18n>FavKleur}"/>
-							<Input value="{FavKleur}"/>
-							<Label text="{i18n>Idool}"/>
-							<Input value="{Idool}" />
-							<Label text="{i18n>Beroep}"/>
-							<Input value="{Beroep}" />
-							<Label text="{i18n>Wens}"/>
-							<Input value="{Wens}"/>
-								<HBox>
-							<Image src="data:image/png;base64,{FotoFamilie}"/>
-							<Image src="data:image/png;base64,{FotoKlas}"/>
-								</HBox>
-								</VBox>
-						</sap.ui.layout.form:content>
-					</sap.ui.layout.form:SimpleForm>
-						<Button press="updateData" text="Save"/>
-							
-				</content>-->
 				</content>
 			</Page>
 		</pages>
