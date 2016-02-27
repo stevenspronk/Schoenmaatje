@@ -5,11 +5,15 @@ sap.ui.define([
 
 	return Controller.extend("Schoenmaatje.controller.Overview", {
 		goToSender: function(oEvent) {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			var barcode = oEvent.getParameters().value;
+			this.navToSender(barcode);
+		},
+		
+		navToSender: function(barcode){
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("sender", {
 				from: "overview",
-				sender: "schoenendoosSet(Barcode='" + barcode + "',Usertype='O')"
+				sender: "schoenendoosSet(Barcode='" + barcode + "',Usertype='V')"
 			});
 		},
 		goToReceiver: function() {
@@ -23,9 +27,11 @@ sap.ui.define([
 
 		},
 		scanBarcode: function() {
+			var self = this;
 			cordova.plugins.barcodeScanner.scan(
 				function(result) {
-				//	console.log(result);
+					var barcode = result.text;
+					self.navToSender(barcode);
 				},
 				function(error) {
 					alert("Scannen mislukt: " + error);

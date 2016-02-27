@@ -35,7 +35,9 @@ sap.ui.define([
 		takePhoto: function(oEvent) {
 			var self = this;
 			navigator.camera.getPicture(function(result) {
-				this.getView().getModel().setProperty("/schoenendoosSet(Barcode='1234567890',Usertype='O')/Foto", result);
+				var sPath = this.getView().getBindingContext().getPath();
+				
+				this.getView().getModel().setProperty(sPath + "/FotoUser", result);
 				//console.log(result + result);
 			}.bind(this), onFail, {
 				quality: 50,
@@ -44,6 +46,19 @@ sap.ui.define([
 
 			function onFail(message) {
 				alert('Failed because: ' + message);
+			}
+		},
+		
+		updateData: function(oEvent){
+			var oModel = this.getView().getModel();
+			if (oModel.hasPendingChanges()) {
+				oModel.attachEventOnce('requestCompleted', {}, function(oEvent) { 
+					if (oEvent.getParameter('success')) {
+					} else {
+						// TODO: foutmelding weergeven
+					}
+				});
+				oModel.submitChanges();
 			}
 		}
 

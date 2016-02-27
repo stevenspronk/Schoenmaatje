@@ -76,13 +76,7 @@
 			"": {
 				"dataSource": "schoenendozenSource",
 				"settings": {
-					"json": true,
-					"defaultOperationMode": "Client",
-					"useBatch": false,
-					"serviceUrlParams": {
-						"$format": "json"
-					},
-					"defaultCountMode": "None"
+					"defaultBindingMode": "TwoWay"
 				}
 			}
 
