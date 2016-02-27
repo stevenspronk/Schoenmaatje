@@ -4,9 +4,13 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("Schoenmaatje.controller.Overview", {
-		goToSender: function() {
+		goToSender: function(oEvent) {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("sender");
+			var barcode = oEvent.getParameters().value;
+			oRouter.navTo("sender", {
+				from: "overview",
+				sender: "schoenendoosSet(Barcode='" + barcode + "',Usertype='O')"
+			});
 		},
 		goToReceiver: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);

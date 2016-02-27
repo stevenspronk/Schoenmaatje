@@ -1,10 +1,13 @@
 <mvc:View controllerName="Schoenmaatje.controller.Sender" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<App>
 		<pages>
-			<Page title="{i18n>PersonPageTitle}">
+			<Page title="Jij">
 				<headerContent></headerContent>
 				<content>
+					<Title text="Mijn schoenendoos is: {senderModel>/Barcode}"/>
+					<Text text="{senderModel>/Voornaam}"/>
 					<Button press="takePhoto" text="Foto!"/>
+<<<<<<< HEAD
 					<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="false" layout="ResponsiveGridLayout" id="__form0">
 
 				    <sap.ui.layout.form:content>
@@ -22,6 +25,9 @@
 				        <Input width="100%" id="__input2"/></sap.ui.layout.form:content>
 
 				</sap.ui.layout.form:SimpleForm>
+=======
+					
+>>>>>>> branch 'master' of https://github.com/stevenspronk/Schoenmaatje.git
 				</content>
 			</Page>
 		</pages>

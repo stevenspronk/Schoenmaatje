@@ -16,7 +16,11 @@
 		},
 		"dataSources": {
 			"schoenendozenSource": {
-				"uri": "/sap/opu/odata/sap/ZHCK_EDUKANS_SRV/"
+				"uri": "/sap/opu/odata/sap/ZHCK_EDUKANS_SRV/",
+				"type": "OData",
+				"settings": {
+				  "odataVersion": "2.0"
+				}
 			}
 		}
 	},
@@ -97,7 +101,7 @@
 				"name": "overview",
 				"target": "overview"
 			}, {
-				"pattern": "sender",
+				"pattern": "{sender}",
 				"name": "sender",
 				"target": "sender"
 			}, {
