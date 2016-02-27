@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog title="Nieuwe Locatie" type="Message" >
+		<content>
+			<Input placeholder="Vul de barcode in"></Input>
+		</content>
+		<beginButton>
+			<Button text="OK" press="confirmSearchDialog"/>
+		</beginButton>
+		<endButton>
+			<Button text="Annuleren" press="cancelSearchDialog" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

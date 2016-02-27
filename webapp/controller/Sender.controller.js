@@ -18,17 +18,12 @@ sap.ui.define([
 			var oParameters = oEvent.getParameters();
 			var sEntityPath = "/" + oParameters.arguments.sender;
 			var oModel = this.getView().getModel();
-			oModel.read("/schoenendoosSet", {
+			oModel.read(sEntityPath, {
 							success: function(result) {
 							self.getView().bindElement({
 								path: sEntityPath
 							}
 							);
-							var oSenderModel = new JSONModel();
-							self.getView().setModel(oSenderModel, "senderModel");
-							var oData = self.getView().getModel().getData(sEntityPath);
-							self.getView().getModel("senderModel").setData(oData);
-
 							}
 						});
 		},
@@ -68,7 +63,7 @@ sap.ui.define([
 				oModel.submitChanges();
 			}
 		},
-				onNavBack: function () {
+		onNavBack: function () {
 			var oHistory, sPreviousHash;
 			oHistory = History.getInstance();
 			sPreviousHash = oHistory.getPreviousHash();
@@ -77,6 +72,40 @@ sap.ui.define([
 			} else {
 				this.getRouter().navTo("appHome", {}, true /*no history*/);
 			}
+		},
+		
+		setForeignCountry: function(oEvent){
+			var self = this;
+			var oParameters = oEvent.getParameters();
+			var oModel = this.getView().getModel();
+			var sPath = this.getView().getBindingContext().getPath();
+			var barcode = this.getView().getModel().getData(sPath).Barcode;
+			var sEntityPath = "/schoenendoosSet(Barcode='" + barcode + "',Usertype='O')";
+			oModel.read(sEntityPath, {
+							success: function(result) {
+							self.getView().bindElement({
+								path: sEntityPath
+							}
+							);
+							}
+						});
+		},
+		
+		setHomeCountry: function(oEvent){
+			var self = this;
+			var oParameters = oEvent.getParameters();
+			var oModel = this.getView().getModel();
+			var sPath = this.getView().getBindingContext().getPath();
+			var barcode = this.getView().getModel().getData(sPath).Barcode;
+			var sEntityPath = "/schoenendoosSet(Barcode='" + barcode + "',Usertype='V')";
+			oModel.read(sEntityPath, {
+							success: function(result) {
+							self.getView().bindElement({
+								path: sEntityPath
+							}
+							);
+							}
+						});
 		}
 
 	});

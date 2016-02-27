@@ -9,7 +9,7 @@
 						<StandardTile  icon="sap-icon://bar-code" number="Scan!" numberUnit="{numberUnit}" press="scanBarcode" title="Druk hier om te scannen!"
 							type="Monitor">	</StandardTile>
 					
-						<StandardTile icon="sap-icon://edit" number="Voer in!" numberUnit="{numberUnit}" press="scanBarcode"
+						<StandardTile icon="sap-icon://edit" number="Voer in!" numberUnit="{numberUnit}" press="openSearchDialog"
 							title="Druk hier om de barcode in te vullen!" type="Monitor">			</StandardTile>
 		<Image src="images/edukans-logo.png"></Image>
 					</VBox>

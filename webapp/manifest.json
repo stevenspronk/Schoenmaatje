@@ -102,7 +102,7 @@
 				"name": "sender",
 				"target": "sender"
 			}, {
-				"pattern": "receiver",
+				"pattern": "{receiver}",
 				"name": "receiver",
 				"target": "receiver"
 			}],

@@ -8,7 +8,7 @@
 					<sap.ui.layout.form:content>
 						<sap.ui.core:Title id="__title0" text="Title" xmlns:sap.ui.core="sap.ui.core"/>
 							<Label text="{i18n>Voornaam}"/>
-							<Input value="{receiverModel>/Voornaam}"/>
+							<Input value="{Voornaam}"/>
 							<Label text="{i18n>Vader}"/>
 							<Input value="{receiverModel>/Vader}" />
 							<Label text="{i18n>Moeder}"/>
