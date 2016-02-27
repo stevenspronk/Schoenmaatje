@@ -16,6 +16,7 @@
 						</SegmentedButton>
 						<ToolbarSpacer/>
 							
+							
 					</Toolbar>
 					<Panel id="mainPanel" visible="true" backgroundDesign="Transparent">
 					<l:Grid class="sapUiSmallMarginTop" defaultSpan="L6 M8 S12" hSpacing="2" visible="{path: 'Usertype', formatter:'.Formatter.isSender'}">
