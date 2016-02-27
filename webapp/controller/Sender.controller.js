@@ -16,7 +16,7 @@ sap.ui.define([
 		},
 
 		formatMapUrl: function(sCountry) {
-			return "https://maps.googleapis.com/maps/api/staticmap?size=500x300&markers=" + jQuery.sap.encodeURL(sCountry);
+			return "https://maps.googleapis.com/maps/api/staticmap?center=" + sCountry + "&size=500x400&maptype=roadmap" ;
 		},
 
 		_onObjectMatched: function(oEvent) {

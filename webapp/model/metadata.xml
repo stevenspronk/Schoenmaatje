@@ -1,14 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
 	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
-
 	<edmx:DataServices m:DataServiceVersion="2.0">
-		
 		<Schema Namespace="ZHCK_EDUKANS_SRV" sap:schema-version="1 " xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-			
 			<EntityType Name="schoenendoos" sap:content-version="1">
-				
 				<Key>
 					<PropertyRef Name="Barcode"/>
 					<PropertyRef Name="Usertype"/>
@@ -18,45 +12,60 @@
 				<Property MaxLength="1" Name="Usertype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
 					sap:label="Hackaton Usertype (Verzender of Ontvanger)" sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="30" Name="Voornaam" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="Hackaton Naam" sap:sortable="false" sap:updatable="false"/>
+					sap:label="Hackaton Naam" sap:sortable="false"/>
 				<Property MaxLength="30" Name="Vader" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Vader"
-					sap:sortable="false" sap:updatable="false"/>
+					sap:sortable="false"/>
 				<Property MaxLength="30" Name="Moeder" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Moeder"
-					sap:sortable="false" sap:updatable="false"/>
+					sap:sortable="false"/>
 				<Property MaxLength="2" Name="BroersAantal" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="Aant Broers" sap:sortable="false" sap:updatable="false"/>
+					sap:label="Aant Broers" sap:sortable="false"/>
 				<Property MaxLength="2" Name="ZustersAantal" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="Aant Zussen" sap:sortable="false" sap:updatable="false"/>
+					sap:label="Aant Zussen" sap:sortable="false"/>
 				<Property MaxLength="30" Name="FavSport" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Sport"
-					sap:sortable="false" sap:updatable="false"/>
+					sap:sortable="false"/>
 				<Property MaxLength="30" Name="FavMuziek" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Muziek"
-					sap:sortable="false" sap:updatable="false"/>
+					sap:sortable="false"/>
 				<Property MaxLength="30" Name="FavHobby" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Hobby"
-					sap:sortable="false" sap:updatable="false"/>
+					sap:sortable="false"/>
 				<Property MaxLength="30" Name="FavKleur" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Kleur"
-					sap:sortable="false" sap:updatable="false"/>
+					sap:sortable="false"/>
 				<Property MaxLength="30" Name="Idool" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Idool"
-					sap:sortable="false" sap:updatable="false"/>
+					sap:sortable="false"/>
 				<Property MaxLength="30" Name="Beroep" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Beroep"
-					sap:sortable="false" sap:updatable="false"/>
-				<Property Name="Wens" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Wens" sap:sortable="false"
-					sap:updatable="false"/>
+					sap:sortable="false"/>
+				<Property Name="Wens" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Wens" sap:sortable="false"/>
 				<Property Name="FotoUser" Nullable="false" Type="Edm.Binary" sap:creatable="false" sap:filterable="false" sap:label="Foto1"
-					sap:sortable="false" sap:updatable="false"/>
+					sap:sortable="false"/>
 				<Property Name="FotoFamilie" Nullable="false" Type="Edm.Binary" sap:creatable="false" sap:filterable="false" sap:label="Foto2"
-					sap:sortable="false" sap:updatable="false"/>
+					sap:sortable="false"/>
 				<Property Name="FotoKlas" Nullable="false" Type="Edm.Binary" sap:creatable="false" sap:filterable="false" sap:label="Foto3"
-					sap:sortable="false" sap:updatable="false"/>
+					sap:sortable="false"/>
+				<Property Name="DatumVerzending" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Datum Verzending"
+					sap:sortable="false"/>
+				<Property Name="DatumHaven" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Datum Haven"
+					sap:sortable="false"/>
+				<Property Name="DatumOntvangst" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Datum Ontvangst"
+					sap:sortable="false"/>
+				<Property Name="Country_V" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Land Verzending"
+					sap:sortable="false"/>
+				<Property Name="Country_O" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label=" Land Ontvangst"
+					sap:sortable="false"/>
 			</EntityType>
-			
 			<EntityContainer Name="ZHCK_EDUKANS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
 				<EntitySet EntityType="ZHCK_EDUKANS_SRV.schoenendoos" Name="schoenendoosSet" sap:content-version="1" sap:creatable="false"
-					sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+					sap:deletable="false" sap:pageable="false"/>
+				<FunctionImport EntitySet="schoenendoosSet" Name="UpdateSchoenendoos" ReturnType="ZHCK_EDUKANS_SRV.schoenendoos" m:HttpMethod="POST"
+					sap:action-for="ZHCK_EDUKANS_SRV.schoenendoos">
+					<Parameter MaxLength="18" Mode="In" Name="Barcode" Type="Edm.String"/>
+					<Parameter MaxLength="1" Mode="In" Name="Usertype" Type="Edm.String"/>
+				</FunctionImport>
 			</EntityContainer>
-			<atom:link href="http://SAPERP01.beheer.lan:8000/sap/opu/odata/sap/ZHCK_EDUKANS_SRV/$metadata" rel="self"
-				xmlns:atom="http://www.w3.org/2005/Atom"/>
-			<atom:link href="http://SAPERP01.beheer.lan:8000/sap/opu/odata/sap/ZHCK_EDUKANS_SRV/$metadata" rel="latest-version"
-				xmlns:atom="http://www.w3.org/2005/Atom"/>
+			<atom:link
+				href="https://webidetesting2393250-s0013987622trial.dispatcher.hanatrial.ondemand.com/sap/opu/odata/sap/ZHCK_EDUKANS_SRV/$metadata"
+				rel="self" xmlns:atom="http://www.w3.org/2005/Atom"/>
+			<atom:link
+				href="https://webidetesting2393250-s0013987622trial.dispatcher.hanatrial.ondemand.com/sap/opu/odata/sap/ZHCK_EDUKANS_SRV/$metadata"
+				rel="latest-version" xmlns:atom="http://www.w3.org/2005/Atom"/>
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>

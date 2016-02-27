@@ -101,14 +101,6 @@
 				"pattern": "{sender}",
 				"name": "sender",
 				"target": "sender"
-			}, {
-				"pattern": "{receiver}",
-				"name": "receiver",
-				"target": "receiver"
-			}, {
-				"pattern": "{country}",
-				"name": "country",
-				"target": "country"
 			}],
 			"targets": {
 				"overview": {
@@ -116,13 +108,6 @@
 				},
 				"sender": {
 					"viewName": "Sender"
-				},
-				"receiver": {
-					"viewName": "Receiver"
-				},
-				
-				"country": {
-					"viewName": "Country"
 				}
 			}
 		},
