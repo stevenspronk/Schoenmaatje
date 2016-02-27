@@ -13,6 +13,7 @@ sap.ui.define([
 		oRouter.getRoute("sender").attachMatched(this._onObjectMatched, this);
 		},
 		
+		
 		_onObjectMatched: function (oEvent) {
 			var self = this;
 			var oParameters = oEvent.getParameters();
@@ -25,8 +26,8 @@ sap.ui.define([
 							}
 							);
 							}
-						});
-		},
+						}); 
+		}, 
 		takePhotoUser: function(oEvent){
 			this.createPhoto(oEvent, "FotoUser");
 		},
@@ -106,12 +107,16 @@ sap.ui.define([
 							);
 							}
 						});
-		},
+		}, 
+
 		onShowTimeline: function(oEvent) {
-			var oTimeLine = this.getView().byId("timeLineId");
+			// var oTimeLine = this.getView().byId("timeLineId");
+			var path=this.getView().getBindingContext().getPath();
+			var oDataModel = this.getView().getModel().getData(path);
+			
 			// var oHaven = this.getView().byId("havenId");
 			// var oOntvangst = this.getView().byId("ontvangstId");
-			// var oDataModel = this.getView().getModel().getData();
+
 			// if ( oDataModel.DatumHaven ) {
 			// 	oHaven.setVisible(true);
 			// }
@@ -124,11 +129,32 @@ sap.ui.define([
 				this._oPopover = sap.ui.xmlfragment("Schoenmaatje.fragments.TimeLine", this);
 				this.getView().addDependent(this._oPopover);
 				// this._oPopover.setPlacement(sap.m.PlacementType.HorizontalPreferedRight);
-				this._oPopover.openBy(oTimeLine);
+				this.openPopover(path, oDataModel);
+				// this._oPopover.openBy(oTimeLine);
 			} else {
-				this._oPopover.openBy(oTimeLine);
+				this.openPopover(path, oDataModel);
+				// this._oPopover.openBy(oTimeLine);
 			}
 		},
+		
+		openPopover:function(path, oDataModel){
+			var oTimeLine = this.getView().byId("timeLineId");
+			// var path=this.getView().getBindingContext().getPath();
+			// var oDataModel = sap.ui.getCore().getModel().getData(path);
+			
+			var oHaven = sap.ui.getCore().byId("havenId");
+			var oOntvangst = sap.ui.getCore().byId("ontvangstId");
+			
+			if ( oDataModel.DatumHaven ) {
+				oHaven.setVisible(true);
+			}
+			if ( oDataModel.DatumOntvangst ) {
+				oOntvangst.setVisible(true);
+			}			
+			this._oPopover.bindElement(path);
+			this._oPopover.openBy(oTimeLine);
+		},
+		
 		onCloseTimeLine: function(oEvent) {
 			this._oPopover.close();
 		}		

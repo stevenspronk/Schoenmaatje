@@ -1,0 +1,50 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:com="sap.suite.ui.commons" xmlns="sap.m">
+	<Popover class="sapUiContentPadding" contentWidth="25rem" placement="Bottom" title="Timeline">
+		<core:Icon srce="{pic}"/>
+		<com:Timeline enableScroll="false" enableSocial="false" id="idTimeline" sortOldestFirst="true" width="30%">
+			<com:content>
+				<com:TimelineItem
+				    dateTime  = "{DatumVerzending}" 
+				   	userNameClickable = "false"
+				   	text = "Ik heb de schoenendoos verzonden"
+					userName = "John Smith"
+					title = ""
+					filterValue = "Note"
+					icon = "sap-icon://activate">
+				</com:TimelineItem>
+				<com:TimelineItem
+					id="havenId"
+				    dateTime  = "{DatumHaven}" 
+				   	userNameClickable = "false"
+				   	text = "De doos is in de Container gegaan"
+					userName = "DHL"
+					title = ""
+					filterValue = "Note"
+					icon = "sap-icon://shipping-status"
+					visible="false">
+				</com:TimelineItem>	
+				<com:TimelineItem
+					id="ontvangstId"
+				    dateTime  = "{DatumOntvangst}" 
+				   	userNameClickable = "false"
+				   	text = "Yes, de doos is ontvangen"
+					userName = "DHL"
+					title = ""
+					filterValue = "Note"
+					icon = "sap-icon://complete"
+					visible="false">
+				</com:TimelineItem>					
+			</com:content>
+		</com:Timeline>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button
+					id="timeLineCloseId"
+					text="Close"
+					press="onCloseTimeLine" />
+			</Toolbar>
+		</footer>
+		<!--<Image src="{ProductPicUrl}" width="15em" densityAware="false" />-->
+	</Popover>
+</core:FragmentDefinition>
