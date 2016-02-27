@@ -1,17 +1,16 @@
-<mvc:View controllerName="Schoenmaatje.controller.Overview" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout">
+<mvc:View controllerName="Schoenmaatje.controller.Overview" displayBlock="true" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
 	<App>
 		<pages>
 			<Page title="{i18n>homePageTitle}">
 				<headerContent></headerContent>
 				<content>
 					<VBox class="overviewGrid">
-
-						<StandardTile  icon="sap-icon://bar-code" number="Scan!" numberUnit="{numberUnit}" press="scanBarcode" title="Druk hier om te scannen!"
-							type="Monitor">	</StandardTile>
-					
-						<StandardTile icon="sap-icon://edit" number="Voer in!" numberUnit="{numberUnit}" press="openSearchDialog"
-							title="Druk hier om de barcode in te vullen!" type="Monitor">			</StandardTile>
-		<Image src="images/edukans-logo.png"></Image>
+						<StandardTile icon="sap-icon://bar-code" number="{i18n>Scan}" numberUnit="{numberUnit}" press="scanBarcode" title="{i18n>Scantitle}"
+							type="Monitor"></StandardTile>
+						<StandardTile icon="sap-icon://edit" number="{i18n>Barcode}" numberUnit="{numberUnit}" press="openSearchDialog" title="{i18n>BarcodeTitle}"
+							type="Monitor"></StandardTile>
+						<Image src="images/edukans-logo.png"></Image>
 					</VBox>
 					<!--
 					<VBox>

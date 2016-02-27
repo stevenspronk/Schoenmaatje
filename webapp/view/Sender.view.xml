@@ -5,55 +5,63 @@
 			<Page navButtonPress="onNavBack" showNavButton="true" title="Jij">
 				<headerContent></headerContent>
 				<content>
+					<Button id="timeLineId" press="onShowTimeline" text="Time Line"/>		
 					<Toolbar>
 						<ToolbarSpacer/>
 						<SegmentedButton selectedButton="sender">
-							<Button id="sender" press="setHomeCountry" text="Nederland"/>
-							<Button press="setForeignCountry" text="Andere land"/>
+							<Button id="sender" press="setHomeCountry" text="{i18n>SendingCountry}"/>
+
+							<Button press="setForeignCountry" text="{i18n>DestinationCountry}"/>
 						</SegmentedButton>
 						<ToolbarSpacer/>
 					</Toolbar>
 					<l:Grid class="sapUiSmallMarginTop" defaultSpan="L6 M8 S12" hSpacing="2" visible="{path: 'Usertype', formatter:'.Formatter.isSender'}">
 						<l:content>
-							<Text text="Mijn voornaam is:"/>
-							<Input class="nameTitle" value="{Voornaam}"></Input>
+								<Label text="{i18n>Voornaam}"/>
+								<Input value="{Voornaam}"/>
 							<VBox class="formImage">
 								<Image src="data:image/png;base64,{FotoUser}" width="100%"></Image>
 								<Button press="takePhotoUser" text="Maak een foto van jezelf!" width="100%" visible="{path: 'Usertype', formatter:'.Formatter.isSender'}"></Button>
 							</VBox>
 							<VBox>
-								<Title text="Mijn familie!"></Title>
-								<Text class="inputForm" text="Mijn vader heet:"></Text>
-								<Input class="nameTitle" value="{Vader}"/>
-								<Text class="inputForm" text="Mijn moeder heet:"></Text>
-								<Input class="nameTitle" value="{Moeder}"/>
-								<Text class="inputForm" text="Zoveel broers heb ik:"></Text>
-								<Input class="nameTitle" value="{BroersAantal}"/>
-								<Text class="inputForm" text="Zoveel zussen heb ik:"></Text>
-								<Input class="nameTitle" value="{ZussenAantal}"/>
+								<sap.ui.layout.form:SimpleForm editable="false" id="__form0" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form">
+									<sap.ui.layout.form:content>
+										<Title text="{i18n>Familie}"></Title>
+										<Label text="{i18n>Vader}"/>
+										<Input value="{Vader}"/>
+										<Text text="{i18n>Moeder}"></Text>
+										<Input value="{Moeder}"/>
+										<Text text="{i18n>BroersAantal}"></Text>
+										<Input value="{BroersAantal}"/>
+										<Text text="{i18n>ZustersAantal}"></Text>
+										<Input value="{ZussenAantal}"/>
+									</sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
 							</VBox>
 							<Image src="data:image/png;base64,{FotoFamilie}" width="100%"></Image>
 							<Button press="takePhotoFamily" text="Maak een foto van je familie!" width="100%"></Button>
 							<VBox>
-								<Text class="inputForm" text="Was is je favoriete sport?"></Text>
+
+								<Label text="{i18n>FavSport}"/>
 								<Input class="nameTitle" value="{FavSport}"/>
-								<Text class="inputForm" text="Wat voor soort muziek luister je graag?"></Text>
+									<Label text="{i18n>FavMuziek}"/>
 								<Input class="nameTitle" value="{FavMuziek}"/>
-								<Text class="inputForm" text="Was is je allerleukste hobby?"></Text>
+									<Label text="{i18n>FavHobby}"/>
 								<Input class="nameTitle" value="{FavHobby}"/>
-								<Text class="inputForm" text="De mooiste kleur vind ik:"></Text>
+								<Label text="{i18n>FavKleur}"/>
 								<Input class="nameTitle" value="{FavKleur}"/>
-								<Text class="inputForm" text="Dit zou ik later willen worden:"></Text>
+								<Label text="{i18n>Idool}"/>
 								<Input class="nameTitle" value="{Idool}"/>
-								<Text class="inputForm" text="Mijn wens voor jou is:"></Text>
+								<Label text="{i18n>Beroep}"/>
 								<Input class="nameTitle" value="{Beroep}"/>
+								<Label text="{i18n>Wens}"/>
+								<TextArea rows="3" value="{Wens}"/>
 							</VBox>
 							<Image src="data:image/png;base64,{FotoKlas}" width="100%"></Image>
 							<Button press="takePhotoClass" text="Maak een foto van je klas!" width="100%"></Button>
 						</l:content>
 					</l:Grid>
-					
-					
+
 						<l:Grid class="sapUiSmallMarginTop" defaultSpan="L6 M8 S12" hSpacing="2" visible="{path: 'Usertype', formatter:'.Formatter.isReceiver'}">
 						<l:content>
 							<Text text="Ik ben {Voornaam}"/>

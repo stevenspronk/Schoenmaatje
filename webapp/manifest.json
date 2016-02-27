@@ -105,6 +105,10 @@
 				"pattern": "{receiver}",
 				"name": "receiver",
 				"target": "receiver"
+			}, {
+				"pattern": "{country}",
+				"name": "country",
+				"target": "country"
 			}],
 			"targets": {
 				"overview": {
@@ -115,6 +119,10 @@
 				},
 				"receiver": {
 					"viewName": "Receiver"
+				},
+				
+				"country": {
+					"viewName": "Country"
 				}
 			}
 		},
