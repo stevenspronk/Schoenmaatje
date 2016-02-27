@@ -106,7 +106,32 @@ sap.ui.define([
 							);
 							}
 						});
-		}
+		},
+		onShowTimeline: function(oEvent) {
+			var oTimeLine = this.getView().byId("timeLineId");
+			// var oHaven = this.getView().byId("havenId");
+			// var oOntvangst = this.getView().byId("ontvangstId");
+			// var oDataModel = this.getView().getModel().getData();
+			// if ( oDataModel.DatumHaven ) {
+			// 	oHaven.setVisible(true);
+			// }
+			// if ( oDataModel.DatumOntvangst ) {
+			// 	oOntvangst.setVisible(true);
+			// }			
+			
+			// create popover
+			if (!this._oPopover) {
+				this._oPopover = sap.ui.xmlfragment("Schoenmaatje.fragments.TimeLine", this);
+				this.getView().addDependent(this._oPopover);
+				// this._oPopover.setPlacement(sap.m.PlacementType.HorizontalPreferedRight);
+				this._oPopover.openBy(oTimeLine);
+			} else {
+				this._oPopover.openBy(oTimeLine);
+			}
+		},
+		onCloseTimeLine: function(oEvent) {
+			this._oPopover.close();
+		}		
 
 	});
 
