@@ -9,7 +9,6 @@
 					text="De doos is in de Container gegaan" title="" userName="DHL" userNameClickable="false" visible="false"></com:TimelineItem>
 				<com:TimelineItem dateTime="{DatumOntvangst}" filterValue="Note" icon="sap-icon://complete" id="ontvangstId"
 					text="Yes, de doos is ontvangen" title="" userName="DHL" userNameClickable="false" visible="false">
-					visible="true">
 				</com:TimelineItem>
 			</com:content>
 		</com:Timeline>
