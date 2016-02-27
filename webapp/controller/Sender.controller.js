@@ -31,13 +31,25 @@ sap.ui.define([
 							}
 						});
 		},
-
-		takePhoto: function(oEvent) {
+		takePhotoUser: function(oEvent){
+			this.createPhoto(oEvent, "FotoUser");
+		},
+		
+		takePhotoFamily: function(oEvent){
+			this.createPhoto(oEvent, "FotoFamilie");
+		},
+		
+		takePhotoClass: function(oEvent){
+			this.createPhoto(oEvent, "FotoKlas");
+		},
+		
+		createPhoto: function(oEvent, Subject) {
 			var self = this;
+			var fotoSubject = "/" + Subject;
 			navigator.camera.getPicture(function(result) {
 				var sPath = this.getView().getBindingContext().getPath();
-				
-				this.getView().getModel().setProperty(sPath + "/FotoUser", result);
+				var str = result.replace('data:image/png;base64,','');
+				this.getView().getModel().setProperty(sPath + fotoSubject, str);
 				//console.log(result + result);
 			}.bind(this), onFail, {
 				quality: 50,
@@ -52,12 +64,6 @@ sap.ui.define([
 		updateData: function(oEvent){
 			var oModel = this.getView().getModel();
 			if (oModel.hasPendingChanges()) {
-				oModel.attachEventOnce('requestCompleted', {}, function(oEvent) { 
-					if (oEvent.getParameter('success')) {
-					} else {
-						// TODO: foutmelding weergeven
-					}
-				});
 				oModel.submitChanges();
 			}
 		}

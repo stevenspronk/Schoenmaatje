@@ -76,7 +76,10 @@
 			"": {
 				"dataSource": "schoenendozenSource",
 				"settings": {
-					"defaultBindingMode": "TwoWay"
+					"metadataUrlParams": {},
+					"defaultBindingMode": "TwoWay",
+					"loadMetadataAsync": true,
+					"useBatch": false
 				}
 			}
 

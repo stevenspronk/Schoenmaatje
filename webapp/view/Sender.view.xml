@@ -4,7 +4,9 @@
 			<Page title="Jij">
 				<headerContent></headerContent>
 				<content>
-					<Button press="takePhoto" text="Foto!"/>
+					<Button press="takePhotoUser" text="Foto van mij!"/>
+					<Button press="takePhotoFamily" text="Foto van mijn familie!"/>
+					<Button press="takePhotoClass" text="Foto van mijn familie!"/>
 					<sap.ui.layout.form:SimpleForm editable="false" id="__form0" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form">
 						<sap.ui.layout.form:content>
 							<sap.ui.core:Title id="__title0" text="Title" xmlns:sap.ui.core="sap.ui.core"/>
@@ -33,7 +35,11 @@
 							<Input value="{Beroep}" />
 							<Label text="{i18n>Wens}"/>
 							<Input value="{Wens}"/>
-							<Image src="{FotoUser}"/>
+								<HBox>
+							<Image src="data:image/png;base64,{FotoUser}"/>
+							<Image src="data:image/png;base64,{FotoFamilie}"/>
+							<Image src="data:image/png;base64,{FotoKlas}"/>
+								</HBox>
 								</VBox>
 						</sap.ui.layout.form:content>
 					</sap.ui.layout.form:SimpleForm>
