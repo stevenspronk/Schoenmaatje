@@ -13,6 +13,7 @@ sap.ui.define([
 		oRouter.getRoute("sender").attachMatched(this._onObjectMatched, this);
 		},
 		
+		
 		_onObjectMatched: function (oEvent) {
 			var self = this;
 			var oParameters = oEvent.getParameters();
@@ -25,8 +26,8 @@ sap.ui.define([
 							}
 							);
 							}
-						});
-		},
+						}); 
+		}, 
 		takePhotoUser: function(oEvent){
 			this.createPhoto(oEvent, "FotoUser");
 		},
@@ -106,7 +107,12 @@ sap.ui.define([
 							);
 							}
 						});
+<<<<<<< HEAD
+		}, 
+
+=======
 		},
+>>>>>>> branch 'master' of https://github.com/stevenspronk/Schoenmaatje
 		onShowTimeline: function(oEvent) {
 			var oTimeLine = this.getView().byId("timeLineId");
 			// var oHaven = this.getView().byId("havenId");

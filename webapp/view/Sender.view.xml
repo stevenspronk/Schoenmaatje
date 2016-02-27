@@ -4,6 +4,7 @@
 			<Page title="Jij" showNavButton="true" navButtonPress="onNavBack">
 				<headerContent></headerContent>
 				<content>
+					<Button id="timeLineId" press="onShowTimeline" text="Time Line"/>		
 					<Toolbar>
 						<ToolbarSpacer/>
 											<SegmentedButton selectedButton="sender">
