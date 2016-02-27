@@ -5,7 +5,8 @@
 			<Page >
 				<headerContent></headerContent>
 				<content>
-
+					<Image class="sapUiSmallMargin" height="300px"
+						src="{ path: 'Country_V', formatter: '.formatMapUrl' }" width="500px"/>
 				</content>
 			</Page>
 		</pages>
