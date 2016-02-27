@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns:commons="sap.suite.ui.commons" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
 	xmlns="sap.m">
 				<Image class="sapUiSmallMargin"
-						src="{ path: 'Country_V', formatter: '.formatMapUrl' }" width="100%"/>
+						src="{ path: 'Country_O', formatter: '.formatMapUrl' }" width="100%"/>
 			
 </core:FragmentDefinition>

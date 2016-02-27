@@ -14,6 +14,14 @@ sap.ui.define([], function() {
 			} else {
 				return false;
 			}
+		},
+		hasOCountry: function(country){
+			if(country){
+				return true;
+			} 
+			else{
+				return false;
+			}
 		}
 	};
 
