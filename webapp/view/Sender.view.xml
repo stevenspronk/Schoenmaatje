@@ -10,22 +10,36 @@
 						<ToolbarSpacer/>
 						<SegmentedButton selectedButton="sender">
 							<Button id="sender" press="setHomeCountry" text="{i18n>SendingCountry}"/>
-
 							<Button press="setForeignCountry" text="{i18n>DestinationCountry}"/>
 						</SegmentedButton>
 						<ToolbarSpacer/>
 					</Toolbar>
-					
-
 					<l:Grid class="sapUiSmallMarginTop" defaultSpan="L6 M8 S12" hSpacing="2" visible="{path: 'Usertype', formatter:'.Formatter.isSender'}">
 						<l:content>
-								<Label text="{i18n>Voornaam}"/>
-								<Input value="{Voornaam}"/>
-							<VBox class="formImage">
+							<VBox>
 								<Image src="data:image/png;base64,{FotoUser}" width="100%"></Image>
-								<Button press="takePhotoUser" text="Maak een foto van jezelf!" width="100%" visible="{path: 'Usertype', formatter:'.Formatter.isSender'}"></Button>
+								<sap.ui.layout.form:SimpleForm editable="false" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form">
+									<sap.ui.layout.form:content>
+										<Label text="{i18n>Voornaam}"/>
+										<Input value="{Voornaam}"/>
+										<Label text="{i18n>FavSport}"/>
+										<Input class="nameTitle" value="{FavSport}"/>
+										<Label text="{i18n>FavMuziek}"/>
+										<Input class="nameTitle" value="{FavMuziek}"/>
+										<Label text="{i18n>FavHobby}"/>
+										<Input class="nameTitle" value="{FavHobby}"/>
+										<Label text="{i18n>FavKleur}"/>
+										<Input class="nameTitle" value="{FavKleur}"/>
+										<Label text="{i18n>Idool}"/>
+										<Input class="nameTitle" value="{Idool}"/>
+										<Label text="{i18n>Beroep}"/>
+										<Input class="nameTitle" value="{Beroep}"/>
+									</sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
+								<Button press="takePhotoUser" text="Maak een foto van jezelf!" visible="{path: 'Usertype', formatter:'.Formatter.isSender'}" width="100%"></Button>
 							</VBox>
 							<VBox>
+								<Image src="data:image/png;base64,{FotoFamilie}" width="100%"></Image>
 								<sap.ui.layout.form:SimpleForm editable="false" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form">
 									<sap.ui.layout.form:content>
 										<Title text="{i18n>Familie}"></Title>
@@ -39,74 +53,18 @@
 										<Input value="{ZussenAantal}"/>
 									</sap.ui.layout.form:content>
 								</sap.ui.layout.form:SimpleForm>
+								<Button press="takePhotoFamily" text="Maak een foto van je familie!" width="100%"></Button>
 							</VBox>
-							<Image src="data:image/png;base64,{FotoFamilie}" width="100%"></Image>
-							<Button press="takePhotoFamily" text="Maak een foto van je familie!" width="100%"></Button>
 							<VBox>
-
-								<Label text="{i18n>FavSport}"/>
-								<Input class="nameTitle" value="{FavSport}"/>
-									<Label text="{i18n>FavMuziek}"/>
-								<Input class="nameTitle" value="{FavMuziek}"/>
-									<Label text="{i18n>FavHobby}"/>
-								<Input class="nameTitle" value="{FavHobby}"/>
-								<Label text="{i18n>FavKleur}"/>
-								<Input class="nameTitle" value="{FavKleur}"/>
-								<Label text="{i18n>Idool}"/>
-								<Input class="nameTitle" value="{Idool}"/>
-								<Label text="{i18n>Beroep}"/>
-								<Input class="nameTitle" value="{Beroep}"/>
+								<Image src="data:image/png;base64,{FotoKlas}" width="100%"></Image>
+								<Button press="takePhotoClass" text="Maak een foto van je klas!" width="100%"></Button>
+							</VBox>
+							<VBox>
 								<Label text="{i18n>Wens}"/>
-								<TextArea rows="3" value="{Wens}"/>
-
-
-
-							<Image src="data:image/png;base64,{FotoKlas}" width="100%"></Image>
-							<Button press="takePhotoClass" text="Maak een foto van je klas!" width="100%"></Button>
-							<VBox>
-								<sap.ui.layout.form:SimpleForm editable="false" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form">
-									<sap.ui.layout.form:content>
-										<Title text="{i18n>Familie}"></Title>
-										<Label text="{i18n>Vader}"/>
-										<Input value="{Vader}"/>
-										<Text text="{i18n>Moeder}"></Text>
-										<Input value="{Moeder}"/>
-										<Text text="{i18n>BroersAantal}"></Text>
-										<Input value="{BroersAantal}"/>
-										<Text text="{i18n>ZustersAantal}"></Text>
-										<Input value="{ZussenAantal}"/>
-									</sap.ui.layout.form:content>
-								</sap.ui.layout.form:SimpleForm>
-
+								<TextArea rows="3" value="{Wens}" width="100%"/>
 							</VBox>
-							<Image src="data:image/png;base64,{FotoFamilie}" width="60%"></Image>
-							<VBox>
-
-								<!--<Input class="nameTitle" value="Dit is mijn klas!"/>-->
-								<Input class="nameTitle" value="Dit is mijn klas!"/><Input class="nameTitle" value="Dit is mijn klas!"/>
-							</VBox>
-							<Image src="data:image/png;base64,{FotoKlas}" width="60%"></Image>
-								<Input value="{i18n>Klas}"/>
-							</VBox>
-							<Image src="data:image/png;base64,{FotoKlas}" width="60%"></Image>
-							<Label text="{i18n>FavSport}"/>
-							<Input value="{receiverModel>/FavSport}"/>
-							<Label text="{i18n>FavMuziek}"/>
-							<Input value="{receiverModel>/FavMuziek}"/>
-							<Label text="{i18n>FavHobby}"/>
-							<Input value="{receiverModel>/FavHobby}"/>
-							<Label text="{i18n>FavKleur}"/>
-							<Input value="{receiverModel>/FavKleur}"/>
-							<Label text="{i18n>Idool}"/>
-							<Input value="{receiverModel>/Idool}"/>
-							<Label text="{i18n>Beroep}"/>
-							<Input value="{receiverModel>/Beroep}"/>
-							<Label text="{i18n>Wens}"/>
-							<TextArea rows="3" value="{receiverModel>/Wens}"/>
-
 						</l:content>
 					</l:Grid>
-
 					<Button press="updateData" text="Save"/>
 				</content>
 			</Page>
