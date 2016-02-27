@@ -11,31 +11,32 @@
 						<sap.ui.layout.form:content>
 							<sap.ui.core:Title id="__title0" text="Title" xmlns:sap.ui.core="sap.ui.core"/>
 							<Label text="{i18n>Voornaam}"/>
-							<Input value="{senderModel>/Voornaam}" width="30%"/>
+							<Input value="{senderModel>/Voornaam}"/>
 							<Label text="{i18n>Vader}"/>
-							<Input value="{senderModel>/Vader}" width="30%"/>
+							<Input value="{senderModel>/Vader}" />
 							<Label text="{i18n>Moeder}"/>
-							<Input value="{senderModel>/Moeder}" width="30%"/>
+							<Input value="{senderModel>/Moeder}" />
 							<Label text="{i18n>BroersAantal}"/>
-							<Input value="{senderModel>/BroersAantal}" width="30%"/>
+							<Input value="{senderModel>/BroersAantal}" />
 							<Label text="{i18n>ZustersAantal}"/>
-							<Input value="{senderModel>/ZustersAantal}" width="30%"/>
+							<Input value="{senderModel>/ZustersAantal}" />
 							<Label text="{i18n>FavSport}"/>
-							<Input value="{senderModel>/FavSport}" width="30%"/>
+							<Input value="{senderModel>/FavSport}" />
 							<Label text="{i18n>FavMuziek}"/>
-							<Input value="{senderModel>/FavMuziek}" width="30%"/>
+							<Input value="{senderModel>/FavMuziek}" />
 							<Label text="{i18n>FavHobby}"/>
-							<Input value="{senderModel>/FavHobby}" width="30%"/>
+							<Input value="{senderModel>/FavHobby}" />
 							<Label text="{i18n>FavKleur}"/>
-							<Input value="{senderModel>/FavKleur}" width="30%"/>
+							<Input value="{senderModel>/FavKleur}"/>
 							<Label text="{i18n>Idool}"/>
-							<Input value="{senderModel>/Idool}" width="30%"/>
+							<Input value="{senderModel>/Idool}" />
 							<Label text="{i18n>Beroep}"/>
-							<Input value="{senderModel>/Beroep}" width="30%"/>
+							<Input value="{senderModel>/Beroep}" />
 							<Label text="{i18n>Wens}"/>
-							<Input value="{senderModel>/Wens}" width="30%"/>
+							<TextArea value="{senderModel>/Wens}" rows="3"/>
 						</sap.ui.layout.form:content>
 					</sap.ui.layout.form:SimpleForm>
+						<Button press="updateData" text="Save"/>
 				</content>
 			</Page>
 		</pages>
