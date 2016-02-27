@@ -26,6 +26,8 @@
 									<sap.ui.layout.form:content>
 										<Label text="{i18n>Voornaam}"/>
 										<Input value="{Voornaam}"/>
+										<Label text="{i18n>Country}"/>
+										<Input value="{Country_V}"/>	
 										<Label text="{i18n>FavSport}"/>
 										<Input class="nameTitle" value="{FavSport}"/>
 										<Label text="{i18n>FavMuziek}"/>
@@ -78,6 +80,8 @@
 									<sap.ui.layout.form:content>
 										<Label text="{i18n>VoornaamReceiver}"/>
 										<Input value="{Voornaam}"/>
+										<Label text="{i18n>Country}"/>
+										<Input value="{Country_O}"/>
 										<Label text="{i18n>FavSport}"/>
 										<Input class="nameTitle" value="{FavSport}"/>
 										<Label text="{i18n>FavMuziek}"/>
