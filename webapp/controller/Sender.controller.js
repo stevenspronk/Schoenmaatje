@@ -1,12 +1,14 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-		"sap/ui/model/json/JSONModel",
-			"sap/ui/core/routing/History"
-], function(Controller, JSONModel, History) {
+	"sap/ui/model/json/JSONModel",
+	"sap/ui/core/routing/History",
+	"Schoenmaatje/util/Formatter"
+], function(Controller, JSONModel, History, Formatter) {
 	"use strict";
 
 	return Controller.extend("Schoenmaatje.controller.Sender", {
-	
+		
+	Formatter: Formatter,
 	
 	onInit: function () {
 		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);

@@ -1,59 +1,98 @@
-<mvc:View controllerName="Schoenmaatje.controller.Sender" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout">
+<mvc:View controllerName="Schoenmaatje.controller.Sender" displayBlock="true" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
 	<App>
 		<pages>
-			<Page title="Jij" showNavButton="true" navButtonPress="onNavBack">
+			<Page navButtonPress="onNavBack" showNavButton="true" title="Jij">
 				<headerContent></headerContent>
 				<content>
 					<Toolbar>
 						<ToolbarSpacer/>
-											<SegmentedButton selectedButton="sender">
-						<Button text="Nederland" id="sender" press="setHomeCountry"/>
-						<Button text="Andere land" press="setForeignCountry" />
-							
-					</SegmentedButton>
-					<ToolbarSpacer/>
+						<SegmentedButton selectedButton="sender">
+							<Button id="sender" press="setHomeCountry" text="Nederland"/>
+							<Button press="setForeignCountry" text="Andere land"/>
+						</SegmentedButton>
+						<ToolbarSpacer/>
 					</Toolbar>
-
-				<l:Grid class="sapUiSmallMarginTop" defaultSpan="L6 M8 S12" hSpacing="2">
+					<l:Grid class="sapUiSmallMarginTop" defaultSpan="L6 M8 S12" hSpacing="2" visible="{path: 'Usertype', formatter:'.Formatter.isSender'}">
 						<l:content>
-							<Input class="nameTitle" value="Ik heet {Voornaam}"></Input>
+							<Text text="Mijn voornaam is:"/>
+							<Input class="nameTitle" value="{Voornaam}"></Input>
 							<VBox class="formImage">
-
-							<Image src="data:image/png;base64,{FotoUser}" width="60%">
-															
-							</Image>
-							<Button press="takePhotoUser" text="Foto van mij!" width="100%"></Button>
+								<Image src="data:image/png;base64,{FotoUser}" width="100%"></Image>
+								<Button press="takePhotoUser" text="Maak een foto van jezelf!" width="100%" visible="{path: 'Usertype', formatter:'.Formatter.isSender'}"></Button>
 							</VBox>
 							<VBox>
 								<Title text="Mijn familie!"></Title>
-								<HBox>
-							<Text text="Mijn vader heet:" class="inputForm"></Text>
-							<Input class="nameTitle" value="{Vader}"/>
-								</HBox>
-								<HBox>
-							<Text text="Mijn moeder heet:" class="inputForm"></Text>
+								<Text class="inputForm" text="Mijn vader heet:"></Text>
+								<Input class="nameTitle" value="{Vader}"/>
+								<Text class="inputForm" text="Mijn moeder heet:"></Text>
 								<Input class="nameTitle" value="{Moeder}"/>
-									</HBox>
-									<HBox>
-									<Text text="Zoveel broers heb ik:" class="inputForm"></Text>
-									<Input class="nameTitle" value="{BroersAantal}"/>
-										</HBox>
-										<HBox>
-										<Text text="Zoveel zussen heb ik:" class="inputForm"></Text>
-									<Input class="nameTitle" value="{ZussenAantal}"/>
-										</HBox>
+								<Text class="inputForm" text="Zoveel broers heb ik:"></Text>
+								<Input class="nameTitle" value="{BroersAantal}"/>
+								<Text class="inputForm" text="Zoveel zussen heb ik:"></Text>
+								<Input class="nameTitle" value="{ZussenAantal}"/>
 							</VBox>
-							<Image src="data:image/png;base64,{FotoFamilie}" width="60%">
-							</Image>
+							<Image src="data:image/png;base64,{FotoFamilie}" width="100%"></Image>
+							<Button press="takePhotoFamily" text="Maak een foto van je familie!" width="100%"></Button>
 							<VBox>
-							<Input class="nameTitle" value="Dit is mijn klas!"/>
-								<Input class="nameTitle" value="Dit is mijn klas!"/><Input class="nameTitle" value="Dit is mijn klas!"/>
-								</VBox>
-							<Image src="data:image/png;base64,{FotoKlas}" width="60%">
-							</Image>
+								<Text class="inputForm" text="Was is je favoriete sport?"></Text>
+								<Input class="nameTitle" value="{FavSport}"/>
+								<Text class="inputForm" text="Wat voor soort muziek luister je graag?"></Text>
+								<Input class="nameTitle" value="{FavMuziek}"/>
+								<Text class="inputForm" text="Was is je allerleukste hobby?"></Text>
+								<Input class="nameTitle" value="{FavHobby}"/>
+								<Text class="inputForm" text="De mooiste kleur vind ik:"></Text>
+								<Input class="nameTitle" value="{FavKleur}"/>
+								<Text class="inputForm" text="Dit zou ik later willen worden:"></Text>
+								<Input class="nameTitle" value="{Idool}"/>
+								<Text class="inputForm" text="Mijn wens voor jou is:"></Text>
+								<Input class="nameTitle" value="{Beroep}"/>
+							</VBox>
+							<Image src="data:image/png;base64,{FotoKlas}" width="100%"></Image>
+							<Button press="takePhotoClass" text="Maak een foto van je klas!" width="100%"></Button>
 						</l:content>
 					</l:Grid>
-				<!--<content>
+					
+					
+						<l:Grid class="sapUiSmallMarginTop" defaultSpan="L6 M8 S12" hSpacing="2" visible="{path: 'Usertype', formatter:'.Formatter.isReceiver'}">
+						<l:content>
+							<Text text="Ik ben {Voornaam}"/>
+							<Input class="nameTitle" value="{Voornaam}"></Input>
+							<VBox class="formImage">
+								<Image src="data:image/png;base64,{FotoUser}" width="100%"></Image>
+									</VBox>
+							<VBox>
+								<Title text="Mijn familie!"></Title>
+								<Text class="inputForm" text="Mijn vader heet:"></Text>
+								<Input class="nameTitle" value="{Vader}"/>
+								<Text class="inputForm" text="Mijn moeder heet:"></Text>
+								<Input class="nameTitle" value="{Moeder}"/>
+								<Text class="inputForm" text="Zoveel broers heb ik:"></Text>
+								<Input class="nameTitle" value="{BroersAantal}"/>
+								<Text class="inputForm" text="Zoveel zussen heb ik:"></Text>
+								<Input class="nameTitle" value="{ZussenAantal}"/>
+							</VBox>
+							<Image src="data:image/png;base64,{FotoFamilie}" width="100%"></Image>
+							<Button press="takePhotoFamily" text="Maak een foto van je familie!" width="100%"></Button>
+							<VBox>
+								<Text class="inputForm" text="Mijn favoriete sport is {FavSport}?"></Text>
+								<Text class="inputForm" text="Wat voor soort muziek luister je graag?"></Text>
+								<Input class="nameTitle" value="{FavMuziek}"/>
+								<Text class="inputForm" text="Was is je allerleukste hobby?"></Text>
+								<Input class="nameTitle" value="{FavHobby}"/>
+								<Text class="inputForm" text="De mooiste kleur vind ik:"></Text>
+								<Input class="nameTitle" value="{FavKleur}"/>
+								<Text class="inputForm" text="Dit zou ik later willen worden:"></Text>
+								<Input class="nameTitle" value="{Idool}"/>
+								<Text class="inputForm" text="Mijn wens voor jou is:"></Text>
+								<Input class="nameTitle" value="{Beroep}"/>
+							</VBox>
+							<Image src="data:image/png;base64,{FotoKlas}" width="100%"></Image>
+							<Button press="takePhotoClass" text="Maak een foto van je klas!" width="100%"></Button>
+						</l:content>
+					</l:Grid>
+					<Button type="Emphasized" press="updateData" text="Save" width="100%" visible="{path: 'Usertype', formatter:'.Formatter.isSender'}"/>
+					<!--<content>
 
 					<Button press="takePhotoFamily" text="Foto van mijn familie!"/>
 					<Button press="takePhotoClass" text="Foto van mijn familie!"/>
