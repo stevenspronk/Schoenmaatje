@@ -1,11 +1,35 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"sap/ui/core/mvc/Controller",
+		"sap/ui/model/json/JSONModel"
+], function(Controller, JSONModel) {
 	"use strict";
 
 	return Controller.extend("Schoenmaatje.controller.Sender", {
-		onInit: function() {
+	
+	
+	onInit: function () {
+		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+		oRouter.getRoute("sender").attachMatched(this._onObjectMatched, this);
+		},
+		
+		_onObjectMatched: function (oEvent) {
+			var self = this;
+			var oParameters = oEvent.getParameters();
+			var sEntityPath = "/" + oParameters.arguments.sender;
+			var oModel = this.getView().getModel();
+			oModel.read("/schoenendoosSet", {
+							success: function(result) {
+							self.getView().bindElement({
+								path: sEntityPath
+							}
+							);
+							var oSenderModel = new JSONModel();
+							self.getView().setModel(oSenderModel, "senderModel");
+							var oData = self.getView().getModel().getData(sEntityPath);
+							self.getView().getModel("senderModel").setData(oData);
 
+							}
+						});
 		},
 
 		takePhoto: function(oEvent) {
