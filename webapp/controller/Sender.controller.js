@@ -1,7 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-		"sap/ui/model/json/JSONModel"
-], function(Controller, JSONModel) {
+		"sap/ui/model/json/JSONModel",
+			"sap/ui/core/routing/History"
+], function(Controller, JSONModel, History) {
 	"use strict";
 
 	return Controller.extend("Schoenmaatje.controller.Sender", {
@@ -65,6 +66,16 @@ sap.ui.define([
 			var oModel = this.getView().getModel();
 			if (oModel.hasPendingChanges()) {
 				oModel.submitChanges();
+			}
+		},
+				onNavBack: function () {
+			var oHistory, sPreviousHash;
+			oHistory = History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				this.getRouter().navTo("appHome", {}, true /*no history*/);
 			}
 		}
 

@@ -1,9 +1,19 @@
-<mvc:View controllerName="Schoenmaatje.controller.Overview" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+<mvc:View controllerName="Schoenmaatje.controller.Overview" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout">
 	<App>
 		<pages>
 			<Page title="{i18n>homePageTitle}">
 				<headerContent></headerContent>
 				<content>
+					<VBox class="overviewGrid">
+
+						<StandardTile  icon="sap-icon://bar-code" number="Scan!" numberUnit="{numberUnit}" press="scanBarcode" title="Druk hier om te scannen!"
+							type="Monitor">	</StandardTile>
+					
+						<StandardTile icon="sap-icon://edit" number="Voer in!" numberUnit="{numberUnit}" press="scanBarcode"
+							title="Druk hier om de barcode in te vullen!" type="Monitor">			</StandardTile>
+		<Image src="images/edukans-logo.png"></Image>
+					</VBox>
+					<!--
 					<VBox>
 					<Button id="btn_scanSender" press="scanBarcode" text="{i18n>Scan Sender}"></Button>
 					<Input id="btn_goToSender" submit="goToSender" text="{i18n>Sender}"/>
@@ -12,7 +22,7 @@
 					<Button id="btn_goToCountry" press="goToCountry" text="{i18n>Country}"/>
 					<Text text="Lorem ipsum"/>
 					<Button press="scanBarcode" text="Scan!"/>
-					</VBox>
+					</VBox>-->
 				</content>
 			</Page>
 		</pages>

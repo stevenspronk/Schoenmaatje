@@ -1,7 +1,7 @@
 <mvc:View controllerName="Schoenmaatje.controller.Sender" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<App>
 		<pages>
-			<Page title="Jij">
+			<Page title="Jij" showNavButton="true">
 				<headerContent></headerContent>
 				<content>
 					<Button press="takePhotoUser" text="Foto van mij!"/>
